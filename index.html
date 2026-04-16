@@ -34,7 +34,6 @@
                 <button onclick="scrollToSection('techniques')" class="text-stone-500 hover:text-blue-700 whitespace-nowrap">Techniques</button>
                 <button onclick="scrollToSection('nvc')"        class="text-stone-500 hover:text-blue-700 whitespace-nowrap">NVC</button>
                 <button onclick="scrollToSection('models')"     class="text-stone-500 hover:text-blue-700 whitespace-nowrap">Models</button>
-                <button onclick="scrollToSection('promptathon')" class="text-stone-500 hover:text-blue-700 whitespace-nowrap">Workshop</button>
                 <button onclick="scrollToSection('library')"   class="text-stone-500 hover:text-blue-700 whitespace-nowrap">Prompt Library</button>
             </div>
         </div>
@@ -247,26 +246,11 @@
         </div>
     </section>
 
-    <!-- 06 Prompt-a-thon -->
-    <section id="promptathon" class="scroll-mt-20">
-        <div class="px-1 mb-6">
-            <h2 class="text-xl font-black text-stone-900 uppercase tracking-tight">06. Prompt-a-thon Workshop</h2>
-            <p class="text-xs text-stone-500 mt-1">A 60–90 min collaborative model for building institutional AI capacity. Bridges the 68% faculty preparation gap. Tap each phase.</p>
-        </div>
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
-            <button onclick="setPhase(1)" id="ph-1" class="rounded-2xl p-4 text-left border-2 bg-blue-700 border-blue-800 text-white transition-all"><div class="text-[10px] font-black uppercase opacity-80">Phase 1</div><div class="text-sm font-black mt-0.5">Literacy</div></button>
-            <button onclick="setPhase(2)" id="ph-2" class="rounded-2xl p-4 text-left border-2 bg-stone-100 border-transparent text-stone-500 hover:border-stone-300 transition-all"><div class="text-[10px] font-black uppercase opacity-80">Phase 2</div><div class="text-sm font-black mt-0.5">Training</div></button>
-            <button onclick="setPhase(3)" id="ph-3" class="rounded-2xl p-4 text-left border-2 bg-stone-100 border-transparent text-stone-500 hover:border-stone-300 transition-all"><div class="text-[10px] font-black uppercase opacity-80">Phase 3</div><div class="text-sm font-black mt-0.5">Experiment</div></button>
-            <button onclick="setPhase(4)" id="ph-4" class="rounded-2xl p-4 text-left border-2 bg-stone-100 border-transparent text-stone-500 hover:border-stone-300 transition-all"><div class="text-[10px] font-black uppercase opacity-80">Phase 4</div><div class="text-sm font-black mt-0.5">Sharing</div></button>
-        </div>
-        <div id="phase-detail" class="bg-white rounded-3xl border border-stone-200 shadow-sm p-6 min-h-[120px]"></div>
-    </section>
-
-    <!-- 07 Prompt Library -->
+    <!-- 06 Prompt Library -->
     <section id="library" class="scroll-mt-20">
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-6 gap-4 px-1">
             <div>
-                <h2 class="text-xl font-black text-stone-900 uppercase tracking-tight">07. Prompt Library</h2>
+                <h2 class="text-xl font-black text-stone-900 uppercase tracking-tight">06. Prompt Library</h2>
                 <p class="text-xs text-stone-500 mt-1">Tap any card for the full prompt and simulated result.</p>
             </div>
             <div class="flex gap-1 bg-stone-100 p-1 rounded-xl w-full sm:w-auto overflow-x-auto no-scrollbar">
@@ -704,31 +688,6 @@ function setTransparency(level) {
     }
 }
 
-// ===== PROMPT-A-THON =====
-const phases = {
-    1:{ name:'Literacy',     icon:'📖', time:'~15 min', activities:'Introduction to LLMs, tokens, and the hallucination phenomenon.', objective:'Establish a shared vocabulary for AI capabilities and limitations. Participants learn what AI can and cannot reliably do in advising contexts.', tip:'Start with a live demo: show a vague prompt vs. a structured one side-by-side and compare outputs in real time.' },
-    2:{ name:'Training',     icon:'🏋️', time:'~20 min', activities:'Demonstrating frameworks like RACE and Chain-of-Thought with domain-specific advising examples.', objective:'Master specific techniques to move from vague to effective prompts. Practice the CARE or RISEN method on real BYU-I scenarios.', tip:'Have participants rewrite a bad prompt using a framework before seeing the model output — the contrast is the lesson.' },
-    3:{ name:'Experimentation', icon:'🔬', time:'~30 min', activities:'Teams develop, test, and refine prompts for specific workflows (grant writing, student outreach, degree planning, probation letters).', objective:'Develop original prompts through iterative trial and error. Each team owns a real workflow problem from their department.', tip:'Encourage writing 3 versions of each prompt and comparing outputs — iteration is the core skill being built.' },
-    4:{ name:'Sharing',      icon:'🎤', time:'~15 min', activities:'Groups present their most effective prompts and "success stories" to the full room.', objective:'Build a shared institutional prompt library for organizational consistency across advising, career services, and student success.', tip:'Collect winning prompts into a shared Google Doc that becomes the department\'s living prompt library — updated each semester.' }
-};
-function setPhase(n) {
-    const p = phases[n];
-    const d = document.getElementById('phase-detail');
-    d.className = 'bg-white rounded-3xl border border-stone-200 shadow-sm p-6 min-h-[120px] fade-in';
-    void d.offsetWidth;
-    d.innerHTML = `
-        <div class="flex items-center gap-4 mb-5"><span class="text-3xl">${p.icon}</span><div><div class="font-black text-stone-900 text-base">${p.name}</div><div class="text-[10px] uppercase font-bold text-blue-600">${p.time}</div></div></div>
-        <div class="space-y-3">
-            <div class="p-4 bg-stone-50 rounded-2xl border border-stone-100"><div class="text-[10px] font-black uppercase text-stone-400 mb-1">Activities</div><p class="text-xs text-stone-700 leading-relaxed">${p.activities}</p></div>
-            <div class="p-4 bg-blue-50 rounded-2xl border border-blue-100"><div class="text-[10px] font-black uppercase text-blue-600 mb-1">Learning Objective</div><p class="text-xs text-stone-700 leading-relaxed">${p.objective}</p></div>
-            <div class="p-4 bg-amber-50 rounded-2xl border border-amber-100"><div class="text-[10px] font-black uppercase text-amber-600 mb-1">Facilitator Tip</div><p class="text-xs text-stone-700 leading-relaxed">${p.tip}</p></div>
-        </div>`;
-    for (let i = 1; i <= 4; i++) {
-        document.getElementById(`ph-${i}`).className = i === n
-            ? 'rounded-2xl p-4 text-left border-2 bg-blue-700 border-blue-800 text-white transition-all'
-            : 'rounded-2xl p-4 text-left border-2 bg-stone-100 border-transparent text-stone-500 hover:border-stone-300 transition-all';
-    }
-}
 
 // ===== LIBRARY =====
 const libraryData = [
@@ -825,7 +784,6 @@ window.onload = () => {
     setFramework('rtf');
     setNVC('observation');
     setModel('gpt');
-    setPhase(1);
     renderLib('all');
     initChart();
 };
