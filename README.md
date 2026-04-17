@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository documents ongoing work at **Brigham Young University–Idaho (BYU-Idaho)** focused on applying artificial intelligence (AI) to improve student success outcomes. The work is grounded in the university’s distinctive mission and Learning Model, with a particular emphasis on academic advising, student support services, and institutional effectiveness.
+This repository documents ongoing work for Student Success at **Brigham Young University–Idaho (BYU-Idaho)** focused on applying artificial intelligence (AI) to improve student success outcomes. The work is grounded in the university’s distinctive mission and Learning Model, with a particular emphasis on academic advising, student support services, and institutional effectiveness.
 
 At BYU-Idaho, student success is closely tied to principles such as student-centered learning, instructor-guided engagement, and meaningful student preparation. This initiative explores how AI can responsibly augment these principles by enhancing human decision-making, expanding access to support, and enabling more personalized, scalable student experiences without compromising the university’s values.
 
